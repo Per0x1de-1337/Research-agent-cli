@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "research-agent"
+version = "0.1.0"
+description = "CLI-first deep research agent built with LangChain, LangGraph, and the OpenAI API."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+  { name = "OpenAI Codex" }
+]
+dependencies = [
+  "langchain>=1.0.0",
+  "langchain-openai>=1.1.0",
+  "langgraph>=1.0.0",
+  "pydantic>=2.8.2",
+  "pydantic-settings>=2.5.2",
+  "pypdf>=5.1.0",
+  "python-dotenv>=1.0.1",
+  "rich>=13.9.4",
+  "typer>=0.12.5",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.3",
+]
+
+[project.scripts]
+research-agent = "research_agent.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/research_agent"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
