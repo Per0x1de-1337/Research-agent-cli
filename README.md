@@ -1,5 +1,7 @@
 # Research Agent
 
+![image.png](image.png)
+
 CLI-first deep research agent built with LangChain, LangGraph, and the OpenAI API.
 
 It turns a user request into a structured research workflow:
